@@ -32,6 +32,7 @@ module.exports = {
     '@engine262/valid-throw': 'error',
     'arrow-parens': ['error', 'always'],
     'brace-style': ['error', '1tbs', { allowSingleLine: false }],
+    'comma-dangle': 'off',
     'curly': ['error', 'all'],
     'import/order': ['error', { 'newlines-between': 'never' }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],

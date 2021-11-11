@@ -15,6 +15,7 @@
     "build": "npm run build:regex_data && npm run build:engine",
     "build:regex_data": "node scripts/gen_regex_sets.js",
     "build:engine": "rollup -c",
+    "start": "rollup -w -c",
     "test": "bash test/test_root.sh",
     "test:test262": "node test/test262/test262.js",
     "test:supplemental": "node test/supplemental.js",
