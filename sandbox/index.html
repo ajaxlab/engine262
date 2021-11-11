@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.css">
+    <title>engine262</title>
+  </head>
+  <body>
+    <dialog id="loading">
+      Loading...
+    </dialog>
+    <script>
+      try {
+        document.querySelector('#loading').showModal();
+      } catch (e) {}
+      window.addEventListener('error', () => {
+        try {
+          document.querySelector('#loading').close();
+        } catch (e) {}
+      });
+    </script>
+    <!-- github ribbon -->
+    <a id="github" href="https://github.com/engine262/engine262" aria-label="Fork me on GitHub"></a>
+
+    <h1>engine262</h1>
+    <p>A JavaScript engine written in JavaScript for development and exploration.</p>
+
+    <main>
+      <section id="input-section">
+        <fieldset>
+          <legend>Features</legend>
+          <ul id="features"></ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Editor</legend>
+          <label><input id="autoevaluate" checked type="checkbox">Auto Evaluate</label>
+          <select id="mode">
+            <option value="script" selected="selected" autocomplete="off">Script</option>
+            <option value="module">Module</option>
+          </select>
+          <button type="button" id="save-to-gist">Save to Gist</button>
+          <span id="save-to-gist-output"></span>
+        </fieldset>
+
+        <textarea id="input" autocomplete="off"></textarea>
+        <button type="button" id="run">Evaluate</button>
+      </section>
+
+      <section id="output-section">
+        <h2>Output:</h2>
+        <div id="output"></div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://unpkg.com/lz-string@1.4.4/libs/base64-string.js"></script>
+    <script src="https://unpkg.com/lz-string@1.4.4/libs/lz-string.min.js"></script>
+    <script type="module" src="./js/main.mjs"></script>
+    </script>
+  </body>
+</html>

@@ -10,7 +10,8 @@
   },
   "main": "dist/engine262",
   "scripts": {
-    "lint": "eslint rollup.config.js test/ src/ bin/ inspector/ scripts/ --cache --ext=js,mjs",
+    "lint": "eslint rollup.config.js .eslintrc.js test/ src/ bin/ inspector/ scripts/ sandbox/ --cache --ext=js,mjs",
+    "lint:fix": "eslint --fix rollup.config.js .eslintrc.js test/ src/ bin/ inspector/ scripts/ sandbox/ --cache --ext=js,mjs",
     "build": "npm run build:regex_data && npm run build:engine",
     "build:regex_data": "node scripts/gen_regex_sets.js",
     "build:engine": "rollup -c",

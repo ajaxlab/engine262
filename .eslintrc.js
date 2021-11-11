@@ -9,6 +9,10 @@ module.exports = {
     ecmaVersion: 2020,
     requireConfigFile: false,
   },
+  env: {
+    browser: true,
+    node: true,
+  },
   overrides: [
     {
       files: ['*.js'],
@@ -32,12 +36,15 @@ module.exports = {
     'import/order': ['error', { 'newlines-between': 'never' }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-multiple-empty-lines': ['error', { maxBOF: 0, max: 2 }],
-    'no-unused-vars': ['error', {
-      vars: 'all',
-      varsIgnorePattern: '^_',
-      args: 'after-used',
-      argsIgnorePattern: '^_',
-    }],
+    'no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
     'no-empty': ['error', { allowEmptyCatch: true }],
     'quote-props': ['error', 'consistent'],
     'strict': ['error', 'global'],
